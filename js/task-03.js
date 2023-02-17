@@ -14,7 +14,10 @@ const images = [
 ];
 const listEl = document.querySelector('.gallery');
 const galleryEl = images
-  .map((image) => `<li><img src="${image.url}" alt="${image.alt}"></li>`)
+  .map(
+    (image) =>
+      `<li><img src="${image.url}" alt="${image.alt}" width='400' height='250'></li>`
+  )
   .join('');
 listEl.insertAdjacentHTML('beforeend', galleryEl);
 
@@ -27,16 +30,3 @@ listEl.style.cssText = `
   padding-left: 0;
   list-style: none;
 `;
-
-const itemsImg = document.querySelectorAll('img');
-itemsImg.forEach((itemImg) => {
-  itemImg.classList.add('gallery__img');
-});
-
-const galleryImgs = document.querySelectorAll('.gallery__img');
-galleryImgs.forEach((galleryImg) => {
-  galleryImg.style.cssText = `
-width: 400px;
-height: 250px;
-`;
-});
