@@ -8,7 +8,7 @@ function onFormSubmit(event) {
   const formEl = event.currentTarget.elements;
 
   const email = formEl.email.value;
-  const password = formEl.password.value;
+  const password = formEl.password.value.trim();
 
   const formData = { email, password };
 
